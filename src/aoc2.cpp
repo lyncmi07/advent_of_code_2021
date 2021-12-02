@@ -14,6 +14,7 @@ int main()
 
     int depth = 0;
     int x = 0;
+    int aim = 0;
 
     std::string direction;
     int velocity;
@@ -25,14 +26,15 @@ int main()
         if (direction == "forward")
         {
             x += velocity;
+            depth += velocity * aim;
         }
         else if (direction == "down")
         {
-            depth += velocity;
+            aim += velocity;
         }
         else if (direction == "up")
         {
-            depth -= velocity;
+            aim -= velocity;
         }
         else
         {
