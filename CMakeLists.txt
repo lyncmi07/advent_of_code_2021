@@ -5,4 +5,16 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_executable(aoc main.cpp)
 
-add_executable(aoc1 src/aoc1.cpp src/SlidingTotalWindow.cpp src/SlidingTotalWindow.h)
+add_library(aoc_lib
+        src/SlidingTotalWindow.cpp src/SlidingTotalWindow.h
+        )
+target_include_directories(aoc_lib PUBLIC
+        src)
+
+add_executable(aoc1 src/aoc1.cpp)
+target_link_libraries(aoc1 PUBLIC
+        aoc_lib)
+
+add_executable(aoc2 src/aoc2.cpp)
+target_link_libraries(aoc2 PUBLIC
+        aoc_lib)
