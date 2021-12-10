@@ -2,8 +2,6 @@
 // Created by lynchm on 10/12/2021.
 //
 
-#include <iostream>
-
 #include <string>
 #include <cstring>
 
@@ -90,15 +88,12 @@ consteval int getErrorInputPoints(const char* input)
 
 int main()
 {
-    std::cout << "AoC 10 Compile Time" << std::endl;
+    // AoC 10 Compile Time
 
     constexpr char value[] =
 #include INPUT_FILE
         ;
     constexpr int valueSize = sizeof(value);
-
-    std::cout << value << std::endl;
-
     constexpr int inputError = getErrorInputPoints<valueSize>(value);
 
     assertZero<inputError> assertion;
