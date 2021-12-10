@@ -3,13 +3,14 @@
 //
 
 #include <iostream>
-#include <fstream>
+
+#include <FileHandler.hpp>
 
 int main()
 {
     std::cout << "AOC2" << std::endl;
 
-    std::ifstream measureFile("resources/aoc2.txt");
+    auto measureFile = aoc::getFile("resources/aoc2.txt");
 //    std::ifstream measureFile("resources/aoc2_test.txt");
 
     int depth = 0;

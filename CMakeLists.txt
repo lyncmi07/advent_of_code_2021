@@ -10,7 +10,7 @@ add_executable(aoc main.cpp)
 
 add_library(aoc_lib
         src/SlidingTotalWindow.cpp src/SlidingTotalWindow.h
-        )
+        src/FileHandler.cpp)
 target_include_directories(aoc_lib PUBLIC
         src)
 
@@ -20,6 +20,10 @@ target_link_libraries(aoc1 PUBLIC
 
 add_executable(aoc2 src/aoc2.cpp)
 target_link_libraries(aoc2 PUBLIC
+        aoc_lib)
+
+add_executable(aoc3 src/aoc3.cpp)
+target_link_libraries(aoc3 PUBLIC
         aoc_lib)
 
 add_executable(aoc10
